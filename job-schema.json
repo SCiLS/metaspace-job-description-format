@@ -1,0 +1,57 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"version": {
+			"type": "string"
+		},
+		"correlationId": {
+			"type": "string"
+		},
+		"feedbackUrl": {
+			"type": "string"
+		},
+		"metaInformation": {
+			"type": "object",
+			"properties": {
+				"ds_name": {
+					"type": "string"
+				},
+				"ds_id": {
+					"type": "string"
+				},
+				"user_email": {
+					"type": "string"
+				},
+				"source": {
+					"type": "object",
+					"properties": {
+						"type": {
+							"type": "string",
+							"enum": [ "AWSS3" ]
+						},
+						"url": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"type",
+						"url"
+					]
+				}
+			},
+			"required": [
+				"ds_name",
+				"ds_id",
+				"user_email",
+				"source"
+			]
+		}
+	},
+	"required": [
+		"version",
+		"correlationId",
+		"feedbackUrl",
+		"metaInformation"
+	]
+}
